@@ -21,7 +21,7 @@ public class InfoModule extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(InfoModule.this, Info.class);
+                Intent intent = new Intent(InfoModule.this, AddDataInfo.class);
                 startActivity(intent);
             }
         });
