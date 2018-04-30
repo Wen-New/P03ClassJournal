@@ -33,6 +33,7 @@ public class ModulesAdapter extends ArrayAdapter<Info> {
         //End
 
         return rowView;
+        
     }
 
 
