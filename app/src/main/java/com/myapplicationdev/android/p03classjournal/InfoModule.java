@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 public class InfoModule extends AppCompatActivity {
     Button btnAdd, btnInfo, btnEmail;
+    Info mydb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,6 @@ public class InfoModule extends AppCompatActivity {
         btnAdd = (Button)findViewById(R.id.buttonAdd);
         btnInfo = (Button)findViewById(R.id.buttonInfo);
         btnEmail = (Button)findViewById(R.id.buttonEmail);
-
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,9 +50,8 @@ public class InfoModule extends AppCompatActivity {
                 email.putExtra(Intent.EXTRA_EMAIL,
                         new String[]{"jason_lim@rp.edu.sg"});
                 email.putExtra(Intent.EXTRA_SUBJECT,
-                        "Test Email from C347");
-                email.putExtra(Intent.EXTRA_TEXT,
-                        editTextMessage.getText());
+                        "Daily Grades");
+                email.putExtra(Intent.EXTRA_TEXT, mydb.getDailyGrade().toString());
                 // This MIME type indicates email
                 email.setType("message/rfc822");
                 // createChooser shows user a list of app that can handle
