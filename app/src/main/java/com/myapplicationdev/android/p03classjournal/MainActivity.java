@@ -15,7 +15,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     ListView lvModule;
     ArrayList<String> arrayListModule;
-    Button btnEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
 
     }
 }
