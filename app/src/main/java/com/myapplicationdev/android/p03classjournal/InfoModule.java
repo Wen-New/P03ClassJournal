@@ -51,7 +51,7 @@ public class InfoModule extends AppCompatActivity {
                         new String[]{"jason_lim@rp.edu.sg"});
                 email.putExtra(Intent.EXTRA_SUBJECT,
                         "Daily Grades");
-                email.putExtra(Intent.EXTRA_TEXT, mydb.getDailyGrade().toString());
+                //email.putExtra(Intent.EXTRA_TEXT, mydb.getDailyGrade().toString());
                 // This MIME type indicates email
                 email.setType("message/rfc822");
                 // createChooser shows user a list of app that can handle
