@@ -3,8 +3,8 @@ package com.myapplicationdev.android.p03classjournal;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class AddDataInfo extends AppCompatActivity {
 
+public class AddDataInfo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
