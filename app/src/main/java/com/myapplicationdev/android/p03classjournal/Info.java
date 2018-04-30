@@ -2,9 +2,9 @@ package com.myapplicationdev.android.p03classjournal;
 
 public class Info {
     private String dailyGrade;
-    private String week;
+    private int week;
 
-    public Info(String dailyGrade, String week) {
+    public Info(String dailyGrade, int week) {
         this.dailyGrade = dailyGrade;
         this.week = week;
     }
@@ -17,11 +17,11 @@ public class Info {
         this.dailyGrade = dailyGrade;
     }
 
-    public String getWeek() {
+    public int getWeek() {
         return week;
     }
 
-    public void setWeek(String week) {
+    public void setWeek(int week) {
         this.week = week;
     }
 }

@@ -26,7 +26,14 @@ public class ModulesAdapter extends ArrayAdapter<Info> {
         tvGrade = rowView.findViewById(R.id.tvGrade);
         tvWeeks = rowView.findViewById(R.id.tvWeek);
         imageView = (ImageView)rowView.findViewById(R.id.imageView);
-        Info CurrentWeeks = info.get(position);
+        Info CurrentWeeks = info.get(position+1);
+
+        //Hariy start here..
+       // tvWeeks = setText(CurrentWeeks.getText().toString());
+
+
+
+
 
         // put in TextViewScores and Weeks here
 

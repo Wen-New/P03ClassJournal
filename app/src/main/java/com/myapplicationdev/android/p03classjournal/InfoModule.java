@@ -9,14 +9,15 @@ import android.widget.Button;
 import android.widget.Toast;
 import java.util.ArrayList;
 import android.widget.ArrayAdapter;
-
+import android.widget.ListView;
 
 public class InfoModule extends AppCompatActivity {
     Button btnAdd, btnInfo, btnEmail;
     Info mydb;
     int requestCodeAdd = 1;
     ArrayList<Info>infoArray;
-        ArrayAdapter<String> infoAdapter;
+    ArrayAdapter<Info> infoAdapter;
+    ListView lv;
 
 
     @Override
@@ -27,6 +28,11 @@ public class InfoModule extends AppCompatActivity {
         btnAdd = (Button)findViewById(R.id.buttonAdd);
         btnInfo = (Button)findViewById(R.id.buttonInfo);
         btnEmail = (Button)findViewById(R.id.buttonEmail);
+        lv = (ListView) this.findViewById(R.id.lv);
+
+        infoArray = new ArrayList<Info>();
+        infoAdapter = new ModulesAdapter(this,R.layout.row,infoArray);
+        lv.setAdapter(infoAdapter);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,8 +83,11 @@ public class InfoModule extends AppCompatActivity {
 //array LISt
 
 //End
+
+
         // Only handle when 2nd activity closed normally
         //  and data contains something
+        if(requestCode == 1) {
         if(resultCode == RESULT_OK){
             if (data != null) {
                 // Get data passed back from 2nd activity
@@ -86,13 +95,16 @@ public class InfoModule extends AppCompatActivity {
                 String statement = "";
                 // If it is activity started by clicking 				//  Superman, create corresponding String
                 if(requestCode == requestCodeAdd){
-                    statement = "You " + like + " Superman";
+                    statement = "Your grade is " + like;
+                  infoArray.add(new Info(like,1));
+                  infoAdapter.notifyDataSetChanged();
 
                 }
 
                 Toast.makeText(InfoModule.this, statement,
                         Toast.LENGTH_LONG).show();
             }
+        }
         }
     }
 }
