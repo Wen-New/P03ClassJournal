@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     ListView lvModule;
     ArrayList<String> arrayListModule;
+    Button btnEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         lvModule = (ListView)findViewById(R.id.lvModule);
 
         arrayListModule = new ArrayList<String>();
-        arrayListModule.add("C302");
+        arrayListModule.add("C347");
 
         ArrayAdapter arrayAdapterHoliday = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListModule);
 
