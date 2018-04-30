@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class InfoModule extends AppCompatActivity {
     Button btnAdd, btnInfo, btnEmail;
     Info mydb;
+    int requestCodeAdd = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class InfoModule extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(InfoModule.this, AddDataInfo.class);
-                startActivity(intent);
+                startActivityForResult(intent, requestCodeAdd);
             }
         });
 
@@ -64,5 +65,25 @@ public class InfoModule extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        // Only handle when 2nd activity closed normally
+        //  and data contains something
+        if(resultCode == RESULT_OK){
+            if (data != null) {
+                // Get data passed back from 2nd activity
+                String like = data.getStringExtra("add");
+                String statement = "";
+                // If it is activity started by clicking 				//  Superman, create corresponding String
+                if(requestCode == requestCodeAdd){
+                    statement = "You " + like + " Superman";
+                }
+
+                Toast.makeText(InfoModule.this, statement,
+                        Toast.LENGTH_LONG).show();
+            }
+        }
+    }
 }
