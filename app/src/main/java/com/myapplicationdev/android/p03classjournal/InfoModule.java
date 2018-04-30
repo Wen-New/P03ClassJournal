@@ -59,7 +59,7 @@ public class InfoModule extends AppCompatActivity {
                 startActivity(Intent.createChooser(email,
                         "Choose an Email client :"));
 
-            }});
+            }
         });
 
     }
